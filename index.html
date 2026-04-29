@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tailwind Project</title>
+  <link href="dist/output.css" rel="stylesheet">
+  <script>
+  const btn = document.getElementById('menu-btn');
+  const menu = document.getElementById('menu');
+
+  btn.addEventListener('click', () => {
+    menu.classList.toggle('hidden');
+  });
+</script>
+</head>
+<body class="font-sans bg-gray-50 text-gray-800 scroll-smooth">
+
+  <!-- Navbar -->
+<nav id="navbar" class="fixed w-full top-0 z-50 backdrop-blur-md shadow-sm transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+
+    <h1 class="text-2xl font-bold text-blue-600">TruckDispatch</h1>
+
+    <ul class="hidden md:flex space-x-8 font-medium">
+      <li><a href="#" class="nav-link hover:text-blue-600 transition">Home</a></li>
+      <li><a href="#services" class="nav-link hover:text-blue-600 transition">Services</a></li>
+      <li><a href="#pricing" class="nav-link hover:text-blue-600 transition">Pricing</a></li>
+      <li><a href="#contact" class="nav-link hover:text-blue-600 transition">Contact</a></li>
+    </ul>
+
+    <a href="#contact" class="bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700 transition">
+      Get Quote
+    </a>
+
+  </div>
+</nav>
+
+<!-- JS -->
+<script>
+  const navbar = document.getElementById('navbar');
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  // 85vh in pixels (matches your hero section height)
+  const heroHeight = window.innerHeight * 0.85;
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY < heroHeight) {
+      // Above image — white text, transparent bg
+      navbar.classList.remove('bg-white');
+      navbar.classList.add('bg-transparent');
+      navLinks.forEach(link => {
+        link.classList.remove('text-gray-800');
+        link.classList.add('text-white');
+      });
+    } else {
+      // Below image — black text, white bg
+      navbar.classList.remove('bg-transparent');
+      navbar.classList.add('bg-white');
+      navLinks.forEach(link => {
+        link.classList.remove('text-white');
+        link.classList.add('text-gray-800');
+      });
+    }
+  });
+
+  // Run on page load
+  window.dispatchEvent(new Event('scroll'));
+</script>
+<section class="relative" style="height: 100vh;">
+
+  <!-- Background Image with Dim Overlay -->
+  <div class="absolute inset-0 z-0">
+    <img src="2.jpg" class="w-full h-full object-cover" alt="Truck">
+    <div class="absolute inset-0 bg-black/60"></div>
+  </div>
+
+  <!-- Content on Top -->
+  <div class="relative z-10 max-w-7xl mx-auto px-6 flex items-start h-full pt-36">
+    <div class="max-w-2xl">
+
+      <h1 class="text-5xl font-bold leading-tight mb-6 text-white">
+        Premium Truck Dispatch Services for Growing Fleets
+      </h1>
+
+      <p class="text-gray-300 mb-8 text-lg">
+        We help owner-operators and fleet owners secure high-paying loads, reduce empty miles, and maximize profit with 24/7 expert dispatch support.
+      </p>
+
+      <div class="flex gap-4">
+        <a href="#contact" class="bg-blue-600 text-white px-6 py-3 rounded-xl hover:shadow-lg hover:bg-blue-700 transition">
+          Get Started
+        </a>
+        <a href="#services" class="border border-white text-white px-6 py-3 rounded-xl hover:bg-white hover:text-black transition">
+          View Services
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+<!-- Services Section -->
+<section id="services" class="relative py-24 overflow-hidden">
+
+  <!-- Background Image -->
+  <img src="1.jpg" class="absolute inset-0 w-full h-full object-cover" alt="bg">
+
+  <!-- Dark Overlay -->
+  <div class="absolute inset-0 bg-black/75"></div>
+
+  <!-- Content -->
+  <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
+
+    <!-- Heading -->
+    <span class="inline-block bg-blue-500/30 text-blue-300 text-sm font-semibold px-4 py-1 rounded-full mb-4 uppercase tracking-wide border border-blue-400/30">
+      What We Offer
+    </span>
+
+    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+      Our Dispatch Services
+    </h2>
+
+    <p class="text-gray-300 max-w-2xl mx-auto mb-16 text-lg">
+      We provide complete truck dispatch solutions to keep your wheels moving and profits growing.
+      No hidden fees, no contracts. Pay a flat percentage of gross revenue. Cancel anytime with 14-day notice.
+    </p>
+
+    <!-- Cards -->
+    <div class="grid md:grid-cols-3 gap-8">
+
+      <!-- Card 1 -->
+      <div class="group relative bg-white/10 backdrop-blur-sm border border-white/20 p-8 rounded-2xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-600 to-blue-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
+        <div class="relative z-10">
+          <div class="w-14 h-14 bg-white/20 group-hover:bg-white/20 rounded-xl flex items-center justify-center text-3xl mb-5">🚛</div>
+          <h3 class="text-xl font-bold mb-3 text-white">Load Booking</h3>
+          <p class="text-gray-300 group-hover:text-blue-100 transition-colors duration-300">
+            We find high-paying loads and negotiate the best rates to maximize your earnings.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="group relative bg-white/10 backdrop-blur-sm border border-white/20 p-8 rounded-2xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-600 to-blue-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
+        <div class="relative z-10">
+          <div class="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center text-3xl mb-5">🗺️</div>
+          <h3 class="text-xl font-bold mb-3 text-white">Route Planning</h3>
+          <p class="text-gray-300 group-hover:text-blue-100 transition-colors duration-300">
+            Smart route optimization to save fuel, time, and increase delivery efficiency.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="group relative bg-white/10 backdrop-blur-sm border border-white/20 p-8 rounded-2xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-600 to-blue-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
+        <div class="relative z-10">
+          <div class="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center text-3xl mb-5">📞</div>
+          <h3 class="text-xl font-bold mb-3 text-white">24/7 Dispatch Support</h3>
+          <p class="text-gray-300 group-hover:text-blue-100 transition-colors duration-300">
+            Our team is always available to assist drivers and handle any issues on the road.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="group relative bg-white/10 backdrop-blur-sm border border-white/20 p-8 rounded-2xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-600 to-blue-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
+        <div class="relative z-10">
+          <div class="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center text-3xl mb-5">📄</div>
+          <h3 class="text-xl font-bold mb-3 text-white">Documentation</h3>
+          <p class="text-gray-300 group-hover:text-blue-100 transition-colors duration-300">
+            We manage all paperwork including rate confirmations and broker communication.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="group relative bg-white/10 backdrop-blur-sm border border-white/20 p-8 rounded-2xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-600 to-blue-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
+        <div class="relative z-10">
+          <div class="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center text-3xl mb-5">📊</div>
+          <h3 class="text-xl font-bold mb-3 text-white">Performance Tracking</h3>
+          <p class="text-gray-300 group-hover:text-blue-100 transition-colors duration-300">
+            Track your loads, revenue, and performance to grow your trucking business.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="group relative bg-white/10 backdrop-blur-sm border border-white/20 p-8 rounded-2xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-600 to-blue-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
+        <div class="relative z-10">
+          <div class="w-14 h-14 bg-white/20 rounded-xl flex items-center justify-center text-3xl mb-5">🤝</div>
+          <h3 class="text-xl font-bold mb-3 text-white">Dedicated Dispatcher</h3>
+          <p class="text-gray-300 group-hover:text-blue-100 transition-colors duration-300">
+            Get a personal dispatcher focused on your business and long-term success.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- Pricing Section -->
+<section id="pricing" class="relative py-24 bg-gradient-to-b from-gray-50 to-white overflow-hidden">
+
+  <!-- Decorative background blobs -->
+  <div class="absolute top-0 left-0 w-72 h-72 bg-blue-100 rounded-full blur-3xl opacity-40 -translate-x-1/2 -translate-y-1/2"></div>
+  <div class="absolute bottom-0 right-0 w-72 h-72 bg-blue-100 rounded-full blur-3xl opacity-40 translate-x-1/2 translate-y-1/2"></div>
+
+  <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
+
+    <!-- Badge -->
+    <span class="inline-block bg-blue-100 text-blue-600 text-sm font-semibold px-4 py-1 rounded-full mb-4 uppercase tracking-wide">
+      Pricing Plans
+    </span>
+
+    <!-- Heading -->
+    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+      Flexible Pricing for Every Fleet Size
+    </h2>
+    <p class="text-gray-500 mb-16 text-lg max-w-xl mx-auto">
+      Transparent pricing designed to maximize your trucking profits. No hidden fees, cancel anytime.
+    </p>
+
+    <!-- Cards -->
+    <div class="grid md:grid-cols-3 gap-8 items-center">
+
+      <!-- Starter -->
+      <div class="group relative bg-white p-8 rounded-2xl border border-gray-200 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+        <!-- Top accent bar -->
+        <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-400 to-blue-600 rounded-t-2xl"></div>
+
+        <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center text-2xl mb-4 mx-auto">🚛</div>
+        <h3 class="text-xl font-bold text-gray-800 mb-2">Starter</h3>
+        <div class="flex items-end justify-center gap-1 mb-1">
+          <span class="text-4xl font-extrabold text-blue-600">$350</span>
+          <span class="text-gray-400 mb-1">/mo</span>
+        </div>
+        <p class="text-gray-400 text-sm mb-6">+ 5% of gross load revenue</p>
+
+        <ul class="text-gray-600 space-y-3 mb-8 text-left text-sm">
+          <li class="flex items-center gap-2"><span class="text-green-500 font-bold">✓</span> 1 Truck</li>
+          <li class="flex items-center gap-2"><span class="text-green-500 font-bold">✓</span> Load booking (DAT / Truckstop)</li>
+          <li class="flex items-center gap-2"><span class="text-green-500 font-bold">✓</span> Rate confirmation handling</li>
+          <li class="flex items-center gap-2"><span class="text-green-500 font-bold">✓</span> BOL & POD submission</li>
+          <li class="flex items-center gap-2"><span class="text-green-500 font-bold">✓</span> Mon–Fri dispatcher (8am–8pm)</li>
+          <li class="flex items-center gap-2 opacity-40"><span class="font-bold">✕</span> Weekend coverage</li>
+          <li class="flex items-center gap-2 opacity-40"><span class="font-bold">✕</span> Dedicated dispatcher</li>
+          <li class="flex items-center gap-2 opacity-40"><span class="font-bold">✕</span> Fleet management</li>
+        </ul>
+
+        <a href="#contact" class="block bg-blue-50 text-blue-600 border border-blue-200 py-3 rounded-xl font-semibold hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all duration-300 transform hover:-translate-y-1">
+          Get Started
+        </a>
+      </div>
+
+      <!-- Professional (Highlighted) -->
+      <div class="group relative bg-gradient-to-b from-blue-600 to-blue-700 text-white p-8 rounded-2xl shadow-2xl scale-105 z-10 border border-blue-500">
+
+        <!-- Glow effect -->
+        <div class="absolute inset-0 rounded-2xl bg-blue-400 blur-xl opacity-20 -z-10"></div>
+
+        <!-- Most Popular Badge -->
+        <div class="absolute -top-4 left-1/2 -translate-x-1/2">
+          <span class="bg-gradient-to-r from-yellow-400 to-orange-400 text-white text-xs font-bold px-4 py-1.5 rounded-full shadow-lg uppercase tracking-wide">
+            ⭐ Most Popular
+          </span>
+        </div>
+
+        <div class="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center text-2xl mb-4 mx-auto mt-2">🏆</div>
+        <h3 class="text-xl font-bold mb-2">Professional</h3>
+        <div class="flex items-end justify-center gap-1 mb-1">
+          <span class="text-4xl font-extrabold">$650</span>
+          <span class="text-blue-200 mb-1">/mo</span>
+        </div>
+        <p class="text-blue-200 text-sm mb-6">+ 4% of gross load revenue</p>
+
+        <ul class="space-y-3 mb-8 text-left text-sm">
+          <li class="flex items-center gap-2"><span class="text-green-300 font-bold">✓</span> 1–3 Trucks</li>
+          <li class="flex items-center gap-2"><span class="text-green-300 font-bold">✓</span> All load boards + direct shippers</li>
+          <li class="flex items-center gap-2"><span class="text-green-300 font-bold">✓</span> Full documentation suite</li>
+          <li class="flex items-center gap-2"><span class="text-green-300 font-bold">✓</span> Dedicated dispatcher</li>
+          <li class="flex items-center gap-2"><span class="text-green-300 font-bold">✓</span> 24/7 driver support</li>
+          <li class="flex items-center gap-2"><span class="text-green-300 font-bold">✓</span> Weekend & holiday coverage</li>
+          <li class="flex items-center gap-2"><span class="text-green-300 font-bold">✓</span> IFTA mileage reports</li>
+          <li class="flex items-center gap-2 opacity-50"><span class="font-bold">✕</span> Fleet management portal</li>
+        </ul>
+
+        <a href="#contact" class="block bg-white text-blue-600 py-3 rounded-xl font-semibold hover:bg-yellow-400 hover:text-white transition-all duration-300 transform hover:-translate-y-1 shadow-lg">
+          Get Started
+        </a>
+      </div>
+
+      <!-- Fleet -->
+      <div class="group relative bg-white p-8 rounded-2xl border border-gray-200 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+        <!-- Top accent bar -->
+        <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-400 to-blue-600 rounded-t-2xl"></div>
+
+        <div class="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center text-2xl mb-4 mx-auto">🏢</div>
+        <h3 class="text-xl font-bold text-gray-800 mb-2">Fleet</h3>
+        <div class="flex items-end justify-center gap-1 mb-1">
+          <span class="text-4xl font-extrabold text-blue-600">Custom</span>
+        </div>
+        <p class="text-gray-400 text-sm mb-6">Custom % based on fleet size</p>
+
+        <ul class="text-gray-600 space-y-3 mb-8 text-left text-sm">
+          <li class="flex items-center gap-2"><span class="text-green-500 font-bold">✓</span> 4–15 Trucks</li>
+          <li class="flex items-center gap-2"><span class="text-green-500 font-bold">✓</span> All Pro features included</li>
+          <li class="flex items-center gap-2"><span class="text-green-500 font-bold">✓</span> Fleet management portal</li>
+          <li class="flex items-center gap-2"><span class="text-green-500 font-bold">✓</span> Driver scheduling tools</li>
+          <li class="flex items-center gap-2"><span class="text-green-500 font-bold">✓</span> Monthly P&L reporting</li>
+          <li class="flex items-center gap-2"><span class="text-green-500 font-bold">✓</span> FMCSA compliance review</li>
+          <li class="flex items-center gap-2"><span class="text-green-500 font-bold">✓</span> Dedicated account manager</li>
+          <li class="flex items-center gap-2"><span class="text-green-500 font-bold">✓</span> Onboarding & setup support</li>
+        </ul>
+
+        <a href="#contact" class="block bg-blue-50 text-blue-600 border border-blue-200 py-3 rounded-xl font-semibold hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all duration-300 transform hover:-translate-y-1">
+          Contact Us
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- Contact Section (Clean Two-Column Layout) -->
+<section id="contact" class="py-20 bg-white text-gray-800">
+
+  <!-- Heading Center -->
+  <div class="text-center mb-12">
+    <h2 class="text-3xl md:text-4xl font-bold">Get In Touch</h2>
+    <p class="text-gray-600 mt-2">We'd love to hear from you. Let's grow your trucking business together.</p>
+  </div>
+
+  <!-- Two Columns -->
+  <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-10">
+
+    <!-- LEFT: Contact Info with Background Image -->
+    <div class="relative p-8 rounded-2xl shadow h-full flex flex-col justify-between overflow-hidden">
+
+      <!-- Background Image -->
+      <img src="1.jpg" class="absolute inset-0 w-full h-full object-cover rounded-2xl" alt="bg">
+
+      <!-- Dim Overlay (light dim) -->
+      <div class="absolute inset-0 bg-blue-900/70 rounded-2xl"></div>
+
+      <!-- Content on top -->
+      <div class="relative z-10 text-white">
+        <h3 class="text-xl font-semibold mb-4">Contact Us</h3>
+
+        <p class="text-blue-100 mb-6">
+          Have questions or ready to get started? Reach out to our dispatch team anytime. We are available 24/7 to support your operations.
+        </p>
+
+        <!-- Contact Details -->
+        <div class="space-y-4">
+          <p><span class="font-semibold">📞 Phone:</span> (800) 474-6642</p>
+          <p><span class="font-semibold">✉️ Email:</span> info@truckdispatch.com</p>
+          <p><span class="font-semibold">📍 Address:</span> Nashville, TN</p>
+          <p><span class="font-semibold">🕐 Hours:</span> 24/7 Support</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT: Form -->
+    <div class="bg-gray-50 p-8 rounded-2xl shadow h-full">
+
+      <h3 class="text-xl font-semibold mb-6">Send Message</h3>
+
+      <form class="space-y-4">
+
+        <input type="text" placeholder="Your Name"
+          class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+
+        <input type="email" placeholder="Your Email"
+          class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+
+        <input type="text" placeholder="Subject"
+          class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+
+        <textarea rows="5" placeholder="Your Message"
+          class="w-full p-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+
+        <button type="submit"
+          class="w-full bg-blue-600 text-white py-3 rounded-xl hover:bg-blue-700 transition duration-300 transform hover:-translate-y-1">
+          Send Message
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</section>
+<!-- Testimonials Section -->
+<section class="py-20 bg-gray-50 text-gray-800">
+
+  <!-- Heading -->
+  <div class="text-center mb-12">
+    <h2 class="text-3xl md:text-4xl font-bold">What Our Clients Say</h2>
+    <p class="text-gray-600 mt-2">
+      Trusted by owner-operators and fleet owners across the country.
+    </p>
+  </div>
+
+  <!-- Cards -->
+  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8">
+
+    <!-- Testimonial 1 -->
+    <div class="bg-white p-6 rounded-2xl shadow hover:shadow-xl transition">
+      <p class="text-gray-600 mb-6">
+        “Since working with this dispatch team, my weekly revenue has increased significantly. They always find the best loads!”
+      </p>
+
+      <div class="flex items-center gap-4">
+        <div class="w-12 h-12 bg-blue-600 text-white flex items-center justify-center rounded-full font-bold">
+          M
+        </div>
+        <div>
+          <h4 class="font-semibold">Mike Caldwell</h4>
+          <p class="text-sm text-gray-500">Owner Operator</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Testimonial 2 -->
+    <div class="bg-white p-6 rounded-2xl shadow hover:shadow-xl transition">
+      <p class="text-gray-600 mb-6">
+        “Professional, reliable, and always available. Their 24/7 support has made my operations stress-free.”
+      </p>
+
+      <div class="flex items-center gap-4">
+        <div class="w-12 h-12 bg-blue-600 text-white flex items-center justify-center rounded-full font-bold">
+          J
+        </div>
+        <div>
+          <h4 class="font-semibold">James Walker</h4>
+          <p class="text-sm text-gray-500">Fleet Owner</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Testimonial 3 -->
+    <div class="bg-white p-6 rounded-2xl shadow hover:shadow-xl transition">
+      <p class="text-gray-600 mb-6">
+        “They handle everything from booking to paperwork. I can focus on driving while they handle the rest.”
+      </p>
+
+      <div class="flex items-center gap-4">
+        <div class="w-12 h-12 bg-blue-600 text-white flex items-center justify-center rounded-full font-bold">
+          S
+        </div>
+        <div>
+          <h4 class="font-semibold">Sarah Khan</h4>
+          <p class="text-sm text-gray-500">Truck Driver</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+<!-- Footer -->
+<footer class="bg-gray-900 text-gray-300 pt-16 pb-8">
+  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-10">
+
+    <!-- Brand -->
+    <div>
+      <h2 class="text-2xl font-bold text-white mb-4">TruckDispatch</h2>
+      <p class="text-gray-400">
+        Professional truck dispatch services helping drivers and fleet owners maximize profits with reliable load booking and 24/7 support.
+      </p>
+    </div>
+
+    <!-- Services -->
+    <div>
+      <h3 class="text-white font-semibold mb-4">Services</h3>
+      <ul class="space-y-2">
+        <li><a href="#" class="hover:text-white">Load Booking</a></li>
+        <li><a href="#" class="hover:text-white">Route Planning</a></li>
+        <li><a href="#" class="hover:text-white">Dispatch Support</a></li>
+        <li><a href="#" class="hover:text-white">Documentation</a></li>
+      </ul>
+    </div>
+
+    <!-- Quick Links -->
+    <div>
+      <h3 class="text-white font-semibold mb-4">Quick Links</h3>
+      <ul class="space-y-2">
+        <li><a href="#" class="hover:text-white">Home</a></li>
+        <li><a href="#" class="hover:text-white">About</a></li>
+        <li><a href="#" class="hover:text-white">Pricing</a></li>
+        <li><a href="#" class="hover:text-white">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact -->
+    <div>
+      <h3 class="text-white font-semibold mb-4">Contact</h3>
+      <ul class="space-y-2">
+        <li>📞 +92 300 1234567</li>
+        <li>📧 info@truckdispatch.com</li>
+        <li>📍 Pakistan</li>
+      </ul>
+
+      <!-- Social -->
+      <div class="flex gap-4 mt-4">
+        <a href="#" class="hover:text-white">🌐</a>
+        <a href="#" class="hover:text-white">📘</a>
+        <a href="#" class="hover:text-white">🐦</a>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="border-t border-gray-700 mt-10 pt-6 text-center text-sm text-gray-500">
+    © 2026 TruckDispatch. All rights reserved.
+  </div>
+</footer>
+
+
+</body>
+</html>
